@@ -41,14 +41,26 @@ int main(int argc, char **argv) {
     result = a * b;
     printf("%f",result);
   } else if(choice == 4) {
-   result = a / b;
+    if(b > 0)
+    {
+      result = a / b;
     printf("%f",result);
+    }
+    else
+    {
+      printf("The value of b is zero \n");
+    }
   } else if(choice == 5) {
     result = min(a,b);
     printf("%f",result);
   } else if(choice == 6) {
-    // result = log(a*(b));
-    // printf("%f",result);
+    if(a > 0 && b > 0)
+    {
+       result = (log(a)/log(b));
+    printf("%f",result);
+    }
+    else
+    printf("Error You Enter negative value \n");
   } else {
     printf("Please input a valid operator next time");
   }
