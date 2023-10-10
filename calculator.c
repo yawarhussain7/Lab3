@@ -11,8 +11,9 @@
 #include <stdio.h>
 #include <math.h>
 
-int min(int x,int y);
-int main(int argc, char **argv) {
+int min(int x, int y);
+int main(int argc, char **argv)
+{
 
   double a, b, result;
   int choice;
@@ -32,44 +33,57 @@ int main(int argc, char **argv) {
   printf("(6) log_a(b)\n");
   scanf("%d", &choice);
 
-  if(choice == 1) {
+  if (choice == 1)
+  {
     printf("%f", a + b);
-  } else if(choice == 2) {
+  }
+  else if (choice == 2)
+  {
     result = a - b;
     printf("%f", result);
-  } else if(choice == 3) {
+  }
+  else if (choice == 3)
+  {
     result = a * b;
-    printf("%f",result);
-  } else if(choice == 4) {
-    if(b > 0)
+    printf("%f", result);
+  }
+  else if (choice == 4)
+  {
+    if (b > 0)
     {
       result = a / b;
-    printf("%f",result);
+      printf("%f", result);
     }
     else
     {
       printf("The value of b is zero \n");
     }
-  } else if(choice == 5) {
-    result = min(a,b);
-    printf("%f",result);
-  } else if(choice == 6) {
-    if(a > 0 && b > 0)
+  }
+  else if (choice == 5)
+  {
+    result = min(a, b);
+    printf("%f", result);
+  }
+  else if (choice == 6)
+  {
+    if (a > 0 && b > 0)
     {
-       result = (log(a)/log(b));
-    printf("%f",result);
+      result = (log(a) / log(b));
+      printf("%f", result);
     }
     else
-    printf("Error You Enter negative value \n");
-  } else {
+      printf("Error You Enter negative value \n");
+  }
+  else
+  {
     printf("Please input a valid operator next time");
   }
 
   return 0;
 }
 
-int min(int x,int y)
+int min(int x, int y)
 {
-  int z = (x < y ) ? x : y;
+  int z = (x < y) ? x : y;
   return z;
 }
