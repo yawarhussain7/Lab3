@@ -27,27 +27,19 @@ int main(int argc, char **argv) {
     printf("How many children do you have? ");
     scanf("%d", &numChildren);
   }
-  if(agi <=  4000 && numChildren >=1 && numChildren <= 2 )
-  {
-    tax = tax;
-    totalTax = tax;
-    childCredit = childCredit;
+  if(agi >= 0 && agi <= 50000){
+    tax = agi * 0.10;
+    printf("%lf",tax);
   }
-  else if(agi <= 20000 && numChildren == 0)
-  {
-    tax = (agi - 2002);
-    totalTax = tax;
-    childCredit = childCredit;
+  else if(agi > 50000 && agi <= 100000){
+  tax = 5000 +(agi - 50000) * 0.20;
+  printf("%lf", tax);
   }
-  else if(agi <= 120000 && numChildren == 3)
-  {
-    tax  = (agi - 11,897.00);
-    
+  else{
+    printf("tax = ........");
   }
-  else
-  {
-    printf("invalid \n");
-  }
+   childCredit = numChildren * 1000;
+  totalTax = tax - childCredit;
   //TODO: compute the tax, child credit, and total tax here
 
   printf("AGI:          $%10.2f\n", agi);
