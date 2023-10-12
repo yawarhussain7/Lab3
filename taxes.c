@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
   printf("%lf", tax);
   }
   else{
-    printf("tax = ........");
+    printf("tax");
   }
    childCredit = numChildren * 1000;
   totalTax = tax - childCredit;
