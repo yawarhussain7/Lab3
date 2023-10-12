@@ -1,36 +1,47 @@
+
 #include <stdio.h>
 
 int main() {
-    float totalGB, currentDay, totalUsedGB;
+  double totalGB,totaluse,reminder_data,average_use,max_Use;
+    int current_day,remaning_day;
     
-    printf("Enter number of GB in the plan per 30 day period: ");
-    scanf("%f", &totalGB);
+    printf("Enter the number of GB in the plan per 30 day period : ");
+    scanf("%lf",&totalGB);
+    printf("Enter the current day in 30 day period (1-30) : ");
+    scanf("%i",&current_day);
+    printf("The total number of GB used so far : ");
+    scanf("%lf",&totaluse);
     
-    printf("Enter the current day in the 30 day period (1 to 30): ");
-    scanf("%f", &currentDay);
+    reminder_data = totalGB - totaluse;
     
-    printf("Enter the total number of GB used so far: ");
-    scanf("%f", &totalUsedGB);
+    average_use = totaluse/current_day;
     
-    float remainingDays = 30 - currentDay;
-    float averageDailyUse = totalUsedGB / currentDay;
-    float remainingGB = totalGB - totalUsedGB;
-    float maxDailyUsage = remainingGB / remainingDays;
+    remaning_day = 30 - current_day;
     
-    printf("%.0f days used, %.0f days remaining\n", currentDay, remainingDays);
-    printf("Average daily use: %.3f GB/day\n", averageDailyUse);
+    max_Use = reminder_data/remaning_day;
     
-    if (averageDailyUse > maxDailyUsage) {
-        printf("You are EXCEEDING your average daily use (%.3f GB/day).\n", maxDailyUsage);
-        printf("Continuing this high usage, you'll exceed your data plan by %.0f GB.\n", (averageDailyUse - maxDailyUsage) * remainingDays);
-        printf("To stay below your data plan, use no more than %.3f GB/day.\n", maxDailyUsage);
-    } else if (averageDailyUse == maxDailyUsage) {
-        printf("You are at your average daily use (%.3f GB/day).\n", averageDailyUse);
-        printf("You can use up to %.3f GB/day and stay below your data plan limit.\n", maxDailyUsage);
-    } else {
-        printf("You are under your average daily use (%.3f GB/day).\n",maxDailyUsage);
-        printf("You can use up to %.3f GB/day and stay below your data plan limit.\n", maxDailyUsage);
+    if(average_use > max_Use)
+    {
+    printf("%i days used, %i days remaining\n",current_day,remaning_day);
+    printf("You are EXCEEDING your average daily use (%lfGB/day).\n",average_use);
+    printf("Continuing this high usage, you'll exceed your data plan by %lf GB.\n",(average_use - max_Use )* remaning_day);
+    printf("To stay below your data plan, use no more than %lf GB/day.\n",max_Use);
     }
+    else if(average_use == max_Use)
+    {
+     printf("%i days used, %i days remaining\n",current_day,remaning_day);   
+     printf("You are EXCEEDING your average daily use (%lfGB/day).\n",average_use);
+     printf("You are at or below your average daily use (%lf GB/day).\n",average_use);
+printf("You can use up to %lf GB/day and stay below your data plan limit\n",max_Use);
+    }
+    else
+    {
+  
+        printf("You are under your average daily use (%.3f GB/day).\n",max_Use);
+        printf("You can use up to %.3f GB/day and stay below your data plan limit.\n",max_Use);
+    }
+    
+    
 
     return 0;
 }
