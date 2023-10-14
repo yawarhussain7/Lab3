@@ -1,4 +1,5 @@
 /**
+ * Author : Yawar Hussain
  * This program computes income taxes based on adjusted
  * gross income and a child tax credit.
  *
@@ -39,7 +40,7 @@ int main(int argc, char **argv) {
     printf("tax");
   }
    childCredit = numChildren * 1000;
-  totalTax = tax - childCredit;
+  totalTax = childCredit - tax ;
   //TODO: compute the tax, child credit, and total tax here
 
   printf("AGI:          $%10.2f\n", agi);
